@@ -22,6 +22,7 @@ public class PokemonDAO {
                     pokemon.setNome(rs.getString("nome"));
                     pokemon.setAltura(rs.getDouble("altura"));
                     pokemon.setPeso(rs.getDouble("peso"));
+                    pokemon.setCategoria(rs.getString("categoria"));
                     pokemon.setDataDaCaptura(rs.getDate("data_da_captura").toLocalDate());
                     pokemons.add(pokemon);
                 }
@@ -45,6 +46,7 @@ public class PokemonDAO {
                 pokemon.setNome(rs.getString("nome"));
                 pokemon.setAltura(rs.getDouble("altura"));
                 pokemon.setPeso(rs.getDouble("peso"));
+                pokemon.setCategoria(rs.getString("categoria"));
                 pokemon.setDataDaCaptura(rs.getDate("data_da_captura").toLocalDate());
             } else {
                 return null;
