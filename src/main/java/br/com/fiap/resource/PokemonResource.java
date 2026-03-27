@@ -63,9 +63,9 @@ public class PokemonResource {
     public Response delete(@PathParam("codigo") Long codigo){
         Response.ResponseBuilder response = null;
         if(pokemonBO.delete(codigo)){
-            response.status(204); //codigo - NO CONTENT (Não tem mais o conteúdo) deletado com sucesso
+            response = Response.status(204); //codigo - NO CONTENT (Não tem mais o conteúdo) deletado com sucesso
         }else {
-            response.status(404); // NOT FOUND (Não encontrado)
+            response = Response.status(404); // NOT FOUND (Não encontrado)
         }
         return response.build();
     }
