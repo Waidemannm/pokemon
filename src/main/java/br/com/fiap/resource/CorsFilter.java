@@ -12,9 +12,9 @@ public class CorsFilter implements ContainerResponseFilter {
     @Override
     public void filter(ContainerRequestContext requestContext,
                        ContainerResponseContext responseContext) {
-        responseContext.getHeaders().add("Access-Control-Allow-Origin", "*");
-        responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-        responseContext.getHeaders().add("Access-Control-Allow-Headers", "Content-Type, Accept, Authorization");
+        responseContext.getHeaders().putSingle("Access-Control-Allow-Origin", "*");
+        responseContext.getHeaders().putSingle("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        responseContext.getHeaders().putSingle("Access-Control-Allow-Headers", "Content-Type, Accept, Authorization");
     }
 
 }
