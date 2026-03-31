@@ -59,6 +59,7 @@ public class PokemonResource {
 
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/{codigo}")
     public Response delete(@PathParam("codigo") Long codigo){
         Response.ResponseBuilder response = null;
         if(pokemonBO.delete(codigo)){
